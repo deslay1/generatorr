@@ -3,12 +3,44 @@
   font-size: 12pt;
 }
 
+.main-page {
+  border-radius: 20px;
+  border: 10px solid beige;
+  -moz-border-radius: 10px;
+  background-image: url("./media/backgroundgen2.jpg");
+  height: 100vh;
+  text-align: center;
+}
+
+.main-title-container {
+  padding-top: 8rem;
+}
+
+.main-title {
+  color: #111;
+  font-family: "Rouge Script";
+  font-size: 80pt;
+  font-weight: bold;
+  line-height: 1;
+  text-align: center;
+}
+
+.main-button-container {
+  padding-top: 4.2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.main-button {
+  font-size: 14pt !important;
+}
+
 .meme-container {
   display: flex;
   justify-content: center;
   flex-direction: row;
   background-color: #fad0d7;
-  height: 160vh;
+  height: 100vh;
 }
 
 .button-container {
@@ -16,14 +48,16 @@
 }
 
 .meme {
-  display: inline-block;
-  width: 50vw;
-  height: 50vh;
+  display: flex;
+  justify-content: center;
 }
 
 .meme-img {
-  width: 100%;
+  align-self: center;
+  width: auto;
   height: auto;
+  max-height: 90vh;
+  max-width: 50vw;
   padding: 2rem;
 }
 
@@ -33,7 +67,6 @@
   padding: 5rem;
   text-align: center;
 }
-
 
 .textman-container {
   background-color: #dee9e4;

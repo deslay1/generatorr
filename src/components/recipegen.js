@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Form, Col, Row, Button, Image } from "react-bootstrap";
+import Navbar from "./navbar";
 
 const API_KEY = "53bafcdd1856410d9718845f0b5e01ef";
 
@@ -119,32 +120,39 @@ export default class recipegen extends Component {
 
   render() {
     return (
-      <div className="recipe-container">
-        <div className="recipe-input-container">
-          <Form>
-            <Row>
-              <Col>
-                <Form.Group className="recipe-input-item" controlId="diet">
-                  <Form.Control as="select" value={this.state.diet} onChange={this.dietChoice}>
-                    <option readOnly>Select Diet</option>
-                    <option>vegetarian</option>
-                    <option>ketogenic</option>
-                    <option>vegan</option>
-                    <option>gluten Free</option>
-                  </Form.Control>
-                </Form.Group>
-              </Col>
-              <Col>
-                <Button className="recipe-input-item" variant="warning" type="submit on" onClick={this.RecipeGenerate}>
-                  Recipe me
-                </Button>
-              </Col>
-            </Row>
-          </Form>
-        </div>
-        <div className="recipe-cards">
-          {this.state.recipes.length === 0 && <h2 className="empty-text-sign">Select a Diet</h2>}
-          {this.RecipeList()}
+      <div className="recipegen">
+        <Navbar />
+        <div className="recipe-container">
+          <div className="recipe-input-container">
+            <Form>
+              <Row>
+                <Col>
+                  <Form.Group className="recipe-input-item" controlId="diet">
+                    <Form.Control as="select" value={this.state.diet} onChange={this.dietChoice}>
+                      <option readOnly>Select Diet</option>
+                      <option>vegetarian</option>
+                      <option>ketogenic</option>
+                      <option>vegan</option>
+                      <option>gluten Free</option>
+                    </Form.Control>
+                  </Form.Group>
+                </Col>
+                <Col>
+                  <Button
+                    className="recipe-input-item"
+                    variant="warning"
+                    type="submit on"
+                    onClick={this.RecipeGenerate}>
+                    Recipe me
+                  </Button>
+                </Col>
+              </Row>
+            </Form>
+          </div>
+          <div className="recipe-cards">
+            {this.state.recipes.length === 0 && <h2 className="empty-text-sign">Select a Diet</h2>}
+            {this.RecipeList()}
+          </div>
         </div>
       </div>
     );

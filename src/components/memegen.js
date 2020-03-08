@@ -1,16 +1,6 @@
 import React, { Component } from "react";
 import { Button, Image } from "react-bootstrap";
-/* 
-const Meme = props => (
-  <tr>
-    <td>{props.meme.id}</td>
-    <td>{props.meme.name}</td>
-    <td>{props.meme.url}</td>
-    <td>{props.meme.width}</td>
-    <td>{props.meme.height}</td>
-    <td>{props.meme.box_count}</td>
-  </tr> 
-); */
+import Navbar from "./navbar";
 
 export default class memegen extends Component {
   constructor(props) {
@@ -70,67 +60,24 @@ export default class memegen extends Component {
 
   render() {
     return (
-      <div className="meme-container">
-        <div className="button-container">
-          <Button variant="secondary" type="submit" onClick={this.memePrevious}>
-            Previous meme
-          </Button>
+      <div className="memegen">
+        <Navbar />
+        <div className="meme-container">
+          <div className="button-container">
+            <Button variant="secondary" type="submit" onClick={this.memePrevious}>
+              Previous meme
+            </Button>
+          </div>
+          <div className="meme">
+            {this.state.randomImg === "" && <h2 className="empty-text-sign">Click "Meme me" to generate a meme</h2>}
+            <Image className="meme-img" src={this.state.randomImg} fluid />
+          </div>
+          <div className="button-container">
+            <Button variant="danger" type="submit" onClick={this.memeGenerate}>
+              Meme me
+            </Button>
+          </div>
         </div>
-        <div className="meme">
-          {this.state.randomImg === "" && <h2 className="empty-text-sign">Click "Meme me" to generate a meme</h2>}
-          <Image className="meme-img" src={this.state.randomImg} fluid />
-        </div>
-        <div className="button-container">
-          <Button variant="danger" type="submit" onClick={this.memeGenerate}>
-            Meme me
-          </Button>
-        </div>
-        {/* 
-        <Form className="meme-form" onSubmit={this.memeSubmit}>
-                    <Row>
-            <Col sm={2}>
-              <Form.Group controlId="topText">
-                <Form.Label>Enter Top Text</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter Top Text"
-                  value={this.state.topText}
-                  onChange={this.memeChange}
-                />
-              </Form.Group>
-            </Col>
-            <Col sm={2}>
-              <Form.Group controlId="bottomText">
-                <Form.Label>Enter Bottom text</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="Enter Bottom Text"
-                  value={this.state.bottomText}
-                  onChange={this.memeChange}
-                />
-              </Form.Group>
-            </Col>
-          </Row>
-          <Button variant="danger" type="submit">
-            Generate meme
-          </Button>
-        </Form>  */}
-        {/* <h3>Memes</h3>
-        <div className="table-container">
-          <table className="table">
-            <thead className="thead-dark">
-              <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Url</th>
-                <th>Width</th>
-                <th>Height</th>
-                <th>Box Count</th>
-              </tr>
-            </thead>
-            <tbody>{this.MemesList()}</tbody>
-          </table>
-        </div> */}
       </div>
     );
   }

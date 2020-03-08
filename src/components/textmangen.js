@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, Col, Row } from "react-bootstrap";
+import Navbar from "./navbar";
 
 export default class textmangen extends Component {
   constructor(props) {
@@ -78,70 +79,73 @@ export default class textmangen extends Component {
 
   render() {
     return (
-      <div className="textman-container">
-        <div className="textman-item-container">
-          <div className="textman-item">
-            <div className="textman-titles">
-              <h3> Text Reverser</h3>
-            </div>
-            <Form>
-              <Row>
-                <Col>
-                  <Form.Group controlId="textReverse">
-                    <Form.Control
-                      type="text"
-                      placeholder="Enter Text"
-                      value={this.state.textReverse}
-                      onChange={this.textReverse}
-                    />
-                  </Form.Group>
-                </Col>
-                <Col>
-                  <Button variant="success" type="submit" onClick={this.textReverseSubmit}>
-                    Reverse me
-                  </Button>
-                </Col>
-              </Row>
-            </Form>
-            <div className="textman-item-output">
-              <h3>{this.state.textReverseSubmit}</h3>
+      <div className="textmangen">
+        <Navbar />
+        <div className="textman-container">
+          <div className="textman-item-container">
+            <div className="textman-item">
+              <div className="textman-titles">
+                <h3> Text Reverser</h3>
+              </div>
+              <Form>
+                <Row>
+                  <Col>
+                    <Form.Group controlId="textReverse">
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter Text"
+                        value={this.state.textReverse}
+                        onChange={this.textReverse}
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Button variant="success" type="submit" onClick={this.textReverseSubmit}>
+                      Reverse me
+                    </Button>
+                  </Col>
+                </Row>
+              </Form>
+              <div className="textman-item-output">
+                <h3>{this.state.textReverseSubmit}</h3>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="textman-item-container">
-          <div className="textman-item">
-            <div className="textman-titles">
-              <h3> Letter Occurances</h3>
-            </div>
-            <Form>
-              <Row>
-                <Col>
-                  <Form.Group controlId="textCounter">
-                    <Form.Control
-                      type="text"
-                      placeholder="Enter Text"
-                      value={this.state.textCounter}
-                      onChange={this.textCounter}
-                    />
-                  </Form.Group>
-                </Col>
-                <Col>
-                  <Button variant="success" type="submit" onClick={this.textCounterSubmit}>
-                    Count Letter Occurances
-                  </Button>
-                </Col>
-              </Row>
-            </Form>
-            <div className="textman-item-output">
-              <table className="table">
-                <thead bg="info" className="thead">
-                  <tr>
-                    <th>Letter</th>
-                    <th>Count</th>
-                  </tr>
-                </thead>
-                <tbody>{this.getCounterList()}</tbody>
-              </table>
+          <div className="textman-item-container">
+            <div className="textman-item">
+              <div className="textman-titles">
+                <h3> Letter Occurances</h3>
+              </div>
+              <Form>
+                <Row>
+                  <Col>
+                    <Form.Group controlId="textCounter">
+                      <Form.Control
+                        type="text"
+                        placeholder="Enter Text"
+                        value={this.state.textCounter}
+                        onChange={this.textCounter}
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col>
+                    <Button variant="success" type="submit" onClick={this.textCounterSubmit}>
+                      Count Letter Occurances
+                    </Button>
+                  </Col>
+                </Row>
+              </Form>
+              <div className="textman-item-output">
+                <table className="table">
+                  <thead bg="info" className="thead">
+                    <tr>
+                      <th>Letter</th>
+                      <th>Count</th>
+                    </tr>
+                  </thead>
+                  <tbody>{this.getCounterList()}</tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>

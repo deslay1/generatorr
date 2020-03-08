@@ -6,7 +6,7 @@ export default class navbar extends Component {
     return (
       <div className="Navbar">
         <Navbar className="justify-content-center" bg="dark" variant="dark">
-          <Navbar.Brand ref="/">Generatorr</Navbar.Brand>
+          <Navbar.Brand href="/">Generatorr</Navbar.Brand>
           <Nav className="mr auto">
             <Nav.Link href="/memegen">Meme me</Nav.Link>
             <Nav.Link href="/textmangen">TextMan</Nav.Link>
